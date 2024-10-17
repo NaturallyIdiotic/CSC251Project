@@ -57,6 +57,9 @@ public class Project_Trevor_Bercher
                
          }
          
+         // close input scanner
+         input.close();
+         
               //outputting all data fields as well as the BMI and Policy Price
       
          for(int i=0; i < policyList.size(); i++)
