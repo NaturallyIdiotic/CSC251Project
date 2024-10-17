@@ -7,7 +7,7 @@ public class Project_Trevor_Bercher
    public static void main(String[] args) throws IOException
    {
       // variable declaration
-      int policyNum = 0, age = 0, numSmoker = 0;
+      int policyNum = 0, age = 0, numSmoker = 0, numNonSmoker = 0;
          
       String providerName, firstName, lastName, smokerStatus, line;
          
@@ -70,8 +70,23 @@ public class Project_Trevor_Bercher
             System.out.printf("\nPolicyHolder's Height: %.1f\n", policyList.get(i).getHeight());
             System.out.printf("\nPolicyHolder's Weight: %.1f\n", policyList.get(i).getWeight());
             System.out.printf("\nPolicyHolder's BMI: %.2f\n", policyList.get(i).getBMI());
-            System.out.printf("\nPolicy Price: $%.2f\n", policyList.get(i).getInsurancePolicyPrice());
+            System.out.printf("\nPolicy Price: $%.2f\n\n\n", policyList.get(i).getInsurancePolicyPrice());
+            
+            // obtain total num of smokers and non smokers
+            if(policyList.get(i).getSmokerStatus().equalsIgnoreCase("smoker"))
+            {
+               numSmoker += 1;
+            }
+            else if(policyList.get(i).getSmokerStatus().equalsIgnoreCase("non-smoker"))
+            {
+               numNonSmoker += 1;
+            }
+            
          }
+            // Display total number of smokers and non smokers
+            System.out.print("The number of policies with a smoker is: " + numSmoker);
+            System.out.print("\n\nThe number of policies with a non-smoker is: " + numNonSmoker);
+            
          
          
       }
