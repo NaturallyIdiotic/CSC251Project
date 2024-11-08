@@ -7,13 +7,13 @@ public class Policy
    
    private PolicyHolder pHolder;
    
+   private static int numPolicyObj = 0; // static field that belongs to class is utilized to track the number of policy objects
    
    /**
       Constructor that accepts arguments for each data field
       @param policyNum holds the policy number
       @param provideName holds name of provider
       @param p holds the policyholder obj
-   
    */
    
    public Policy(int policyNum, String provideName, PolicyHolder p)
@@ -23,6 +23,8 @@ public class Policy
       providerName = provideName;  
       
       pHolder = new PolicyHolder(p); // makes a deep copy of the policy holder object
+      
+      numPolicyObj += 1; // adds one to the static field numPolicyObj to keep track of the number of objects created.
 
    }
    /**
@@ -104,7 +106,7 @@ public class Policy
    */
    public String toString()
    {
-      return String.format("Policy Number:  " + policyNumber + "\nProvider Name: " + providerName + PolicyHolder() + "\nPolicyPrice: $%.2f", getInsurancePolicyPrice());
+      return String.format("Policy Number:  " + policyNumber + "\nProvider Name: " + providerName + pHolder + "\nPolicyPrice: $%.2f", getInsurancePolicyPrice());
    }
    
    
