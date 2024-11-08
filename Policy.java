@@ -71,7 +71,7 @@ public class Policy
       
       int age = pHolder.getAge();
       
-      double bmi = pHolder.getBmi();
+      double bmi = pHolder.getBMI();
       double bmiFee = ( bmi - 35) * 20; 
       double policyPrice = 0.0;
       
@@ -99,6 +99,14 @@ public class Policy
       
       return policyPrice;
    }
+   /**
+      To string method
+   */
+   public String toString()
+   {
+      return String.format("Policy Number:  " + policyNumber + "\nProvider Name: " + providerName + PolicyHolder() + "\nPolicyPrice: $%.2f", getInsurancePolicyPrice());
+   }
+   
    
                      
    

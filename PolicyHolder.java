@@ -178,6 +178,15 @@ public class PolicyHolder
       double bmi = 0.0;
       bmi = ( weight * 703 ) / ( height * height);
       return bmi;
-   }                     
+   } 
+   /**
+      To String Method
+   */ 
+   public String toString()
+   {
+      return String.format("\nPolicyholder's First Name: " + firstName + "\nPolicyholder's Last Name: " + lastName + "\nPolicyHolders's Age: " +
+      age + "\nPolicyHolder's Smoking Status: " + smokerStatus + "\nPolicyHolder's Height: %.1f\n", height + "\nPolicyHolder's Weight: %.1f\n", weight + 
+      "\nPolicyHolder's BMI: %.2f\n", getBMI()); 
+   }                   
    
 }
