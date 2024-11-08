@@ -102,11 +102,26 @@ public class Policy
       return policyPrice;
    }
    /**
+      Method to return smokerStatus
+      @return smokerStatus
+   */
+   public String getSmoke()
+   {
+      return pHolder.getSmokerStatus();
+   }
+   /**
+      Method that returns number of created policy objects
+   */
+   public int getNumPolicyObj()
+   {
+      return numPolicyObj;
+   }
+   /**
       To string method
    */
    public String toString()
    {
-      return String.format("Policy Number:  " + policyNumber + "\nProvider Name: " + providerName + pHolder + "\nPolicyPrice: $%.2f", getInsurancePolicyPrice());
+      return "Policy Number:  " + policyNumber + "\nProvider Name: " + providerName + pHolder + String.format("Policy Price: $%.2f", getInsurancePolicyPrice()) + "\n";
    }
    
    
